@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -15,5 +16,9 @@ public class Test {
         String title = driver.getTitle();
         boolean testResult = title.contains("Google");
         Assert.assertTrue(testResult);
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }
